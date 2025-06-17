@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # MongoDB Service
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - C:\Users\91707\Desktop\Docker\volumnMongo:/data/db
+    restart: unless-stopped
+
+  # Redis Service
+  redis:
+    image: redis:7.0-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - C:\Users\91707\Desktop\Docker\volumnRedis:/data
+    restart: unless-stopped
+
+  # Node.js Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: node_app
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: development
+      MONGO_URI: ${MONGO_URI}
+      JWT_SECRET: ${JWT_SECRET}
+      PORT: 5000
+      Publishable_Key: ${Publishable_Key}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      REDIS_URL: ${REDIS_URL}
+    depends_on:
+      - mongodb
+      - redis
+    restart: unless-stopped
+    volumes:
+      - ./:/app
+      - /app/node_modules
+
+volumes:
+  mongodb_data:
+  redis_data:
