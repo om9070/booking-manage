@@ -1,28 +1,60 @@
-# Booking Management App
+# BOOKING-MANAGE
 
-1.install docker
+**Seamless Scheduling | Limitless Possibilities**
 
-2.open the terminal then hit
-if any image is running the same project folder
-3.docker compose down -v 
-then build
-4.docker compose build
-then start
-5.docker compose up
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Stripe](https://img.shields.io/badge/Stripe-008CDD?style=for-the-badge&logo=stripe&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-This architecture satisfies all original requirements:
-1.Provider availability management
-2.Client booking system
-3.Admin oversight
-4.Secure payments
-5.Conflict-free scheduling
-6.dockerized
-7.implemented cached
+---
 
+## Table of Contents
 
-1.fristly user can register own profile bahave on the role ['admin','client','admin'].
-2.provider can add the available slot if the time slot is available.
-3.client can book the available slot bahave on the available slot.
-4.provider can add the reccuring as ['once','week','month'].
-5. Implemented caching for the booking slot.
-6.user strip payment getway to conform any booking slot.
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+
+---
+
+## Overview
+
+**booking-manage** is a full-featured booking system designed to simplify scheduling, payments, and user management for service providers and clients. Built with modular architecture and Docker support, it offers a scalable solution for appointment-based platforms.
+
+### Why booking-manage?
+
+This project helps developers create reliable, conflict-free booking applications with role-based access control, real-time updates, and secure payment processing. The core features include:
+
+- ✅ **Role-Based Access:** Secure authentication and authorization for clients, providers, and admins.
+- ✅ **Conflict-Free Scheduling:** Manage provider availability with support for recurring and one-time slots.
+- ✅ **Seamless Payments:** Integrated Stripe support for secure, streamlined transactions.
+- ✅ **Real-Time Caching:** Redis-powered updates for fast, consistent booking data.
+- ✅ **Dockerized Environment:** Easy setup and deployment across development and production.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+This project requires the following dependencies:
+
+- **Programming Language:** JavaScript
+- **Package Manager:** Npm
+- **Container Runtime:** Docker
+
+---
+
+## Installation
+
+Build booking-manage from the source and install dependencies:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/om9070/booking-manage
